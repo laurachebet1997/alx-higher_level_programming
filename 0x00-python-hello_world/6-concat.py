@@ -1,4 +1,4 @@
-#!/usr/bin/bash/python3
+#!/usr/bin/python3
 str1 = "Holberton"
 str2 = "School"
 srt1 = str1 + " " + str2

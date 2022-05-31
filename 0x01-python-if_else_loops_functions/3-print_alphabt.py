@@ -3,4 +3,4 @@ for c in range(97, 123):
     if ch(c) == 'e' or ch(c) == 'q':
         continue
     else:
-        print(f"{ch(c):s}")
+        print("{:s}".format(chr(i)), end="")

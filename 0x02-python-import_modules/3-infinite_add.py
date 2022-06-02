@@ -4,7 +4,7 @@
 def add_arg(argv):
     nlength = len(argv) - 1
     if nlength == 0:
-        print("{:d}".format(n))
+        print("{:d}".format(nlength))
         return
     else:
         i = 1

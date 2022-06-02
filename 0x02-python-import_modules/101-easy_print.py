@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-print("#pytoniscool")
+import py_print 

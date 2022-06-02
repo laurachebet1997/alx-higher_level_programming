@@ -9,7 +9,7 @@ def add_arg(argv):
     else:
         i = 1
         add = 0
-        while i < n:
+        while i < nlength:
             add += int(argv[i])
             i += 1
             print("{:d}".format(add))

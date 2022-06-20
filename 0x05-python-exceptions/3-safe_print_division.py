@@ -5,6 +5,5 @@ def safe_print_division(a, b):
         print("Inside result: {:.lf}".format(result))
     except Exception:
         result = None
-        print("Inside result: {}".format(result))
     finally:
         return result

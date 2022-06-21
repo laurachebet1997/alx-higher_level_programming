@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""area of a square"""
 
 
 class square:
+    """area of square defined here"""
     def __init__(self, size=0):
         if type(size) is not int:
             raise TypeError("size must be an integer")

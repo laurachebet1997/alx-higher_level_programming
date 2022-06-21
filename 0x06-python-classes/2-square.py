@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""creates private instance attribute size"""
 
 
 class square:
+    """the class defined here"""
     pass
 
     def __init__(self, size=0):

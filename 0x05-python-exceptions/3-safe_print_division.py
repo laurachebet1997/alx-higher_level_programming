@@ -3,7 +3,7 @@ def safe_print_division(a, b):
     try:
         result = a / b
         print("Inside result: {:.lf}".format(result))
-    except Exception:
+    except SyntaxError:
         result = None
         print("Inside result: {:}".format(result))
     finally:

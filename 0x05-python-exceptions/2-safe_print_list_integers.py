@@ -11,4 +11,4 @@ def safe_print_list_integers(my_list=[], x=0):
                 print()
                 return printed_ints
         except (ValueError, TypeError):
-                index += 1
+            index += 1

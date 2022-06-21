@@ -3,5 +3,5 @@ def safe_print_interger(value):
     try:
         print("{:d}".format(value))
         return True
-    except Exception as error:
+    except:
         return False

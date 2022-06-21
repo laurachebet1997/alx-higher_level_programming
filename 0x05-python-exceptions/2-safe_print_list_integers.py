@@ -10,5 +10,5 @@ def safe_print_list_integers(my_list=[], x=0):
             else:
                 print()
                 return printed_ints
-            except (ValueError, TypeError):
+        except (ValueError, TypeError):
                 index += 1

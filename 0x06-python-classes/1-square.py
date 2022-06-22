@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Creates private instance attribute size"""
 
 
 class Square:

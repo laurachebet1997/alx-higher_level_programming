@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 
-class square:
-    """Initialize classSsquare"""
+class Square:
+    """Initialize class Square"""
     def __init__(self, size=0):
         """Init method of class Square"""
         self.size = size
@@ -19,13 +19,13 @@ class square:
             raise ValueError("size must be >= 0")
         self.__size = size
 
-        def area(self):
-            return (self.size * self.size)
-        def my_print(self):
-            if self.__size == 0:
-                print()
-                return
-            for i in range(self.__size):
-                for j in range(self.__size):
-                    print("#", end="")
-                    print()
+    def area(self):
+        return (self.size * self.size)
+    def my_print(self):
+        if self.__size == 0:
+            print()
+            return
+        for i in range(self.__size):
+            for j in range(self.__size):
+                print("#", end="")
+            print()

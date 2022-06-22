@@ -2,6 +2,6 @@
 """Defines a class square"""
 
 
-class square:
+class Square:
     """An empty class square"""
     pass

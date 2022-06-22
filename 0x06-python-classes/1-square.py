@@ -2,7 +2,7 @@
 """create class private attribute size"""
 
 
-class square:
+class Square:
     """clas defined here"""
     def__init__(self, size):
         """initializing class"""

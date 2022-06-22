@@ -2,7 +2,7 @@
 """creates private instance attribute size"""
 
 
-class square:
+class Square:
     """the class defined here"""
     pass
 

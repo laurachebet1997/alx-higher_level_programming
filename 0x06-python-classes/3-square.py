@@ -2,7 +2,7 @@
 """area of a square"""
 
 
-class square:
+class Square:
     """area of square defined here"""
     def __init__(self, size=0):
         if type(size) is not int:

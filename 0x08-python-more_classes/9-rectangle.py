@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-"""Module: 9-rectangle
+"""
+Module: 9-rectangle
 this module contains the class Rectangle ...
 """
 
 
 class Rectangle:
-    """Class: Rectangle
+    """
+    Class: Rectangle
     this is an empty class, further additions in subsequent assignments
     """
 
@@ -14,13 +16,15 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Class method: creates a square, which is a type of rectangle
+        """
+        Class method: creates a square, which is a type of rectangle
         """
         return cls(size, size)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Static class method: bigger or equal
+        """
+        Static class method: bigger or equal
         Return: boolean - true if rect_1 >= rect_2, based on area(?)
         """
         if not isinstance(rect_1, Rectangle):
@@ -33,7 +37,8 @@ class Rectangle:
             return False
 
     def __init__(self, width=0, height=0):
-        """Method: __init__
+        """
+        Method: __init__
         initialize instance of class Rectangle
         """
         Rectangle.number_of_instances += 1
@@ -42,7 +47,8 @@ class Rectangle:
 
     @property
     def width(self):
-        """Method: set_width
+        """
+        Method: set_width
         getter
         """
         if (not isinstance(self.__width, int)) or isinstance(self.__width,
@@ -54,7 +60,8 @@ class Rectangle:
 
     @width.setter
     def width(self, width):
-        """Method: set_width
+        """
+        Method: set_width
         setter
         """
         if not isinstance(self.__width, int) or isinstance(self.__width, bool):
@@ -65,7 +72,8 @@ class Rectangle:
 
     @property
     def height(self):
-        """Method: set_height
+        """
+        Method: set_height
         getter
         """
         if (not isinstance(self.__height, int)) or isinstance(self.__height,
@@ -77,7 +85,8 @@ class Rectangle:
 
     @height.setter
     def height(self, height):
-        """Method: set_height
+        """
+        Method: set_height
         setter
         """
         if not isinstance(self.__height, int) or isinstance(self.__height,
@@ -88,13 +97,15 @@ class Rectangle:
         self.__height = height
 
     def area(self):
-        """Method: area
+        """
+        Method: area
         Return area of rectangle
         """
         return self.__height * self.__width
 
     def perimeter(self):
-        """Method: perimeter
+        """
+        Method: perimeter
         Return perimeter of perimeter
         """
         if self.__height == 0 or self.width == 0:
@@ -102,7 +113,8 @@ class Rectangle:
         return (self.__height + self.width) * 2
 
     def __str__(self):
-        """Method: __str__
+        """
+        Method: __str__
         Return: nice string representation of rectangle
         """
         ret_str = ""
@@ -115,7 +127,8 @@ class Rectangle:
         return ret_str
 
     def __repr__(self):
-        """Method: __repr__
+        """
+        Method: __repr__
         Return: representation of rectangle that can be used by eval() to
                 create new object
         """
@@ -124,7 +137,8 @@ class Rectangle:
         return ret_str
 
     def __del__(self):
-    """Method: __del__
+    """
+    Method: __del__
            deletes instance of Rectangle class, and prints "bye" message
         """
         Rectangle.number_of_instances -= 1

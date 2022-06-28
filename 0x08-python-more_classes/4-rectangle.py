@@ -4,6 +4,7 @@ module: 4-rectangle
 this module contains the class Rectangle ...
 '''
 
+
 class Rectangle:
     '''class: Rectangle
     this is an empty class, further additions in subsequent assignments

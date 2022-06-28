@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Module: 9-rectangle
-this module contains the class Rectangle ...
+Module: 9-rectangle this module contains the class Rectangle
 """
 
 

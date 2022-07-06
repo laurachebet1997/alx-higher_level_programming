@@ -1,10 +1,20 @@
 #!/usr/bin/python3
-class MyInt(int):
-    def __init__(self, value):
-        self.num = value
+"""
+more class base
+"""
 
-    def __eq__(self, other):
-        return self.num != other
 
-    def __ne__(self, other):
-        return self.num == other
+Rectangle = __import__('9-rectangle').Rectangle
+
+
+"""
+Square class
+"""
+
+
+class Square(Rectangle):
+    """ Square Class """
+    def __init__(self, size):
+        """ instantiation with size """
+        self.__size = size
+        super().__init__(self.__size, self.__size)

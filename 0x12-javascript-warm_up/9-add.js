@@ -7,7 +7,6 @@ if (typeof A === 'number' && typeof B === 'number') {
 } else {
   console.log('NaN');
 }
-
 function add (a, b) {
   return (a + b);
 }

@@ -1,4 +1,4 @@
-!#/usr/bin/node
+#!/usr/bin/node
 const fs = require('fs');
 const first = fs.readFileSync('./' + args[0]);
 const second = fs.readFileSync('./' + args[1]);

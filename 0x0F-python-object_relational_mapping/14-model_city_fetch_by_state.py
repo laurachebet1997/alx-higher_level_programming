@@ -11,11 +11,12 @@ from model_state import Base, State
 from model_city import City
 
 if __name__ == "__main__":
-    engin = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
-                                                                      argv[2],
-                                                                      argv[3]))
-    Base.metadata.create_all(engin)
-    Session = sessionmaker(bind=engin)
+    engine = create_engine('mysql+mysqldb:
+                           //{}:{}@localhost/{}'.format(argv[1],
+                                                        argv[2],
+                                                        argv[3]))
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
     rows = session.query(City, State).filter(City.state_id == State.id)\
                                      .order_by(City.id).all()

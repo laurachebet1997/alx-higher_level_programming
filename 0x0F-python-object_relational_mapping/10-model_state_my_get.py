@@ -4,7 +4,6 @@ a script that lists all State objects
 from the database hbtn_0e_6_usa
 '''
 
-
 from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
@@ -21,7 +20,7 @@ if __name__ == "__main__":
     session = Session()
     state = session.query(State).filter_by(name=argv[4]).first()
     if state is not None:
-            print(str(state.id))
+        print(str(state.id))
     else:
         print("Not found")
     session.close()

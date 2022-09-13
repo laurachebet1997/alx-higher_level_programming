@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-'''
-create a model for city using base
+'''contains a class City
 '''
 
 import sqlalchemy
@@ -9,7 +8,7 @@ from model_state import Base, State
 
 
 class City(Base):
-    '''Representing a class city'''
+    '''Representing a class City'''
 
     __tablename__ = "cities"
     id = Column(Integer, primary_key=True)

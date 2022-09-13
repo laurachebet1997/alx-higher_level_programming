@@ -15,6 +15,7 @@ if __name__ == "__main__":
                    WHERE states.name LIKE 'N%' ORDER BY states.id ASC""")
     rows = cursor.fetchall()
     for row in rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
     cursor.close()
     db.close()

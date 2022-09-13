@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-All states via SQLAlchemy
+lists all states objects via SQLAlchemy
 """
 
 from sys import argv

@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+'''
+create a model for city using base
+'''
 
 from sqlalchemy import Column, Integer, String, ForeingnKey
 from model_state import Base, State
@@ -7,7 +9,7 @@ from model_state import Base, State
 
 class City(Base):
     '''
-    class city
+    Representing a class city
     '''
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True)

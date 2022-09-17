@@ -1,22 +1,16 @@
 #!/usr/bin/python3
-"""Contains a class City
-"""
+"""Contains a class City"""
 from sqlalchemy import Column, Integer, String, ForeingnKey
 from model_state import Base, State
 
 
 class City(Base):
-    """
-    City class:
-    inherits from Base
-    links to the MySQL table states
-    class attribute id that represents a column of an auto-generated,
-    unique integer, cant be null and is a primary key
-    class attribute name that represents a column of a string
-    with maximum 128 characters and cant be null
-    class attribute state_id that represents a column of an integer,
-    can’t be null and is a foreign key to states.id
-    """
+     """Represents a city for a MySQL database.
+     Attributes:
+     id (str): The city's id.
+     name (sqlalchemy.Integer): The city's name.
+     state_id (sqlalchemy.String): The city's state id.
+     """
     __tablename__ = "cities"
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)

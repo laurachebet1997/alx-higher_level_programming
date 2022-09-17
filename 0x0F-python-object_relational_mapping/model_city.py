@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Contains a class City
 """
-import sqlalchemy
 from sqlalchemy import Column, Integer, String, ForeingnKey
 from model_state import Base, State
 
@@ -18,7 +17,6 @@ class City(Base):
     class attribute state_id that represents a column of an integer,
     can’t be null and is a foreign key to states.id
     """
-
     __tablename__ = "cities"
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)

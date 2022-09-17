@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Contains a class City"""
+import sqlalchemy
 from sqlalchemy import Column, Integer, String, ForeingnKey
 from model_state import Base, State
 

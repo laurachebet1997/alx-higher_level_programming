@@ -13,4 +13,4 @@ def find_peak(list_of_integers):
     if len(list_of_integers) == 0:
         return None
 
-    return find_peak(list_of_integers[midpoint:])
+    return find_peak(list_of_integers[:])

@@ -12,11 +12,4 @@ def find_peak(list_of_integers):
         return None
     if len(list_of_integers) == 0:
         return None
-    else:
-        j = 0
-        for i in len(list_of_intergers):
-            if i > j:
-                j = i
-        return j
-
-    # return find_peak(list_of_integers)
+    return list_of_integers

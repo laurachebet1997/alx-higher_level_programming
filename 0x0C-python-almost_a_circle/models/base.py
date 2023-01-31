@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 ''' models/base.py
 '''
-import json
+import os
+import re
+from random import randint
+from json import JSONDecoder, JSONEncoder
 
 
 class Base:
@@ -80,3 +83,82 @@ class Base:
             polygon = cls(*polygons[cls.__name__])
             polygon.update(**dictionary)
             return polygon
+
+    @classmethod
+    def load_from_file(cls):
+        """Loads a list of polygons from a file in JSON format.
+        Returns:
+            list: A list of polygons.
+        """
+        file_name = '{}.json'.format(cls.__name__)
+        lines = []
+        if os.path.isfile(file_name):
+            with open(file_name, mode='r') as file:
+                for line in file.readlines():
+                    lines.append(line)
+        txt = ''.join(lines)
+        attr_dicts = cls.from_json_string(txt)
+        cls_list = list(map(lambda x: cls.create(**x), attr_dicts))
+        return cls_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves a list of polygons to a file in CSV format.
+        Args:
+            list_objs (list): A list of polygons.
+        """
+        file_name = '{}.csv'.format(cls.__name__)
+        poly_fmt_fxns = {
+            'Rectangle': lambda x: '{},{:d},{:d},{:d},{:d}'.format(
+                x.id, x.width, x.height, x.x, x.y),
+            'Square': lambda x: '{},{:d},{:d},{:d}'.format(
+                x.id, x.size, x.x, x.y),
+        }
+        vals_list = []
+        if list_objs is not None:
+            poly_name = cls.__name__
+            for obj in list_objs:
+                if (type(obj) is cls) and (poly_name in poly_fmt_fxns):
+                    vals_list.append('{}\n'.format(
+                        poly_fmt_fxns[poly_name](obj)))
+        with open(file_name, mode='w', encoding='utf-8') as file:
+            file.writelines(vals_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads a list of polygons from a file in CSV format.
+        Returns:
+            list: A list of polygons.
+        """
+        poly_name = cls.__name__
+        file_name = '{}.csv'.format(poly_name)
+        poly_fmt_fxns = {
+            'Rectangle': lambda x: {
+                'id': int(x[0]),
+                'width': int(x[1]),
+                'height': int(x[2]),
+                'x': int(x[3]),
+                'y': int(x[4]),
+            },
+            'Square': lambda x: {
+                'id': int(x[0]),
+                'size': int(x[1]),
+                'x': int(x[2]),
+                'y': int(x[3]),
+            },
+        }
+        poly_fmt = {
+            'Rectangle': r'\s*[^,]+,[^,]+,[^,]+,[^,]+,[^,]+',
+            'Square': r'\s*[^,]+,[^,]+,[^,]+,[^,]+',
+        }
+        lines = []
+        attr_dicts = []
+        if os.path.isfile(file_name):
+            with open(file_name, mode='r') as file:
+                for line in file.readlines():
+                    attrs_match = re.match(poly_fmt[poly_name], line)
+                    if attrs_match is not None:
+                        cols = line.strip().split(',')
+                        attr_dicts.append(poly_fmt_fxns[poly_name](cols))
+        cls_list = list(map(lambda x: cls.create(**x), attr_dicts))
+        return cls_list

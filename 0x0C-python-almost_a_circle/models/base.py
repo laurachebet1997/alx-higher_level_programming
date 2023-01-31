@@ -63,3 +63,20 @@ class Base:
             return []
         else:
             return JSONDecoder().decode(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Creates a polygon with the given attributes.
+        Args:
+            dictionary (dict): A dictionary of the object's attributes.
+        Returns:
+            Base: A polygon object with the given attributes.
+        """
+        polygons = {
+            'Rectangle': (1, 1, 0, 0, None),
+            'Square': (1, 0, 0, None),
+        }
+        if cls.__name__ in polygons.keys():
+            polygon = cls(*polygons[cls.__name__])
+            polygon.update(**dictionary)
+            return polygon

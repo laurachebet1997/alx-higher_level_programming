@@ -3,7 +3,6 @@ import unittest
 from models.square import Square
 import sys
 from io import StringIO
-import pep8
 from models.base import Base
 import json
 from models.rectangle import Rectangle

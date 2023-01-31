@@ -52,15 +52,14 @@ class Base:
         return json.dumps(ret_list)
 
     @staticmethod
-    def to_json_string(list_dictionaries):
-        ''' method json string
-        '''
-        ret_list = []
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
-
-        if type(list_dictionaries) != list:
-            ret_list.append(list_dictionaries)
+    def from_json_string(json_string):
+        """Creates a list from its JSON representation.
+        Args:
+            json_string (str): A JSON string representation of a list.
+        Returns:
+            list: A JSON representation of the list of dictionaries.
+        """
+        if (json_string is None) or (len(json_string.strip()) == 0):
+            return []
         else:
-            ret_list = list_dictionaries
-        return json.dumps(ret_list)
+            return JSONDecoder().decode(json_string)

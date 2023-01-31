@@ -1,20 +1,29 @@
 #!/usr/bin/python3
-"""
-more class base
-"""
+'''A module containing a rebellious int.
+'''
 
 
-Rectangle = __import__('9-rectangle').Rectangle
+class MyInt(int):
+    '''Represents a rebellious integer object.
+    '''
+    def __eq__(self, value):
+        '''Checks if the given value is not equal to the
+        value of this object.
+        Args:
+            value (MyInt): The value to be compared against.
+        Returns:
+            bool: True if the value is not equal to the value
+            stored by this object.
+        '''
+        return super().__ne__(value)
 
-
-"""
-Square class
-"""
-
-
-class Square(Rectangle):
-    """ Square Class """
-    def __init__(self, size):
-        """ instantiation with size """
-        self.__size = size
-        super().__init__(self.__size, self.__size)
+    def __ne__(self, value):
+        '''Checks if the given value is equal to the value
+        of this object.
+        Args:
+            value (MyInt): The value to be compared against.
+        Returns:
+            bool: True if the value is equal to the value
+            stored by this object.
+        '''
+        return super().__eq__(value)
